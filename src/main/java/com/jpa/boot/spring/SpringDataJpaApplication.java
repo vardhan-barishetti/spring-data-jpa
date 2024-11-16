@@ -22,16 +22,17 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Application Starting");
-
-		Product product = new Product();
-		product.setTitle("SAMSUNG-TV");
-		product.setDescription("ALL COMPANIES TV");
-		product.setPrice(1000);
-		product.setLive(true);
-
-		Product p = productService.create(product);
-		System.out.println("Product" + p);
+//		System.out.println("Application Starting");
+//
+//		Product product = new Product();
+//		product.setTitle("SAMSUNG-TV");
+//		product.setDescription("ALL COMPANIES TV");
+//		product.setPrice(1000);
+//		product.setLive(true);
+//
+//		Product p = productService.create(product);
+//		System.out.println("Product" + p);
+//		System.out.println(productService.byId(1));
 
 	}
 }

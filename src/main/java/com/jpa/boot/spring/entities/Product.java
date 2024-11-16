@@ -17,6 +17,12 @@ public class Product {
     private double price;
     private boolean isLive = false;
 
+//    @OneToOne
+//    private Category category;
+
+    @ManyToOne
+    private Category category;
+
     public Product(int productId, String title, String description, double price, boolean isLive) {
         this.productId = productId;
         this.title = title;
@@ -68,6 +74,14 @@ public class Product {
         isLive = live;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -78,4 +92,6 @@ public class Product {
                 ", isLive=" + isLive +
                 '}';
     }
+
+
 }

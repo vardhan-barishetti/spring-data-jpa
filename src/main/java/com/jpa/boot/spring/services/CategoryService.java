@@ -1,6 +1,7 @@
 package com.jpa.boot.spring.services;
 
 import com.jpa.boot.spring.entities.Category;
+import com.jpa.boot.spring.repositories.CategoryRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -16,10 +17,16 @@ public class CategoryService {
 
     private EntityManager entityManager;
 
-    public CategoryService(EntityManager entityManager) {
+    private CategoryRepository repository;
+
+    public CategoryService(EntityManager entityManager, CategoryRepository repository) {
         this.entityManager = entityManager;
+        this.repository = repository;
     }
 
+    public List<Category> getAll(){
+        return repository.findAll();
+    }
     public List<Category> getAllCategories(){
 
         //use criteria api to get all category data
